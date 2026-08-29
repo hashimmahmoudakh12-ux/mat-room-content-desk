@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MAT ROOM — Content Desk</title>
+<meta name="description" content="Content pipeline, calendar and consistency streaks for the wrestling media team." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="wordmark" href="#/dashboard">
+      <span class="wordmark__block">MAT</span><span class="wordmark__thin">ROOM</span>
+      <span class="wordmark__sub">Content Desk</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/dashboard" data-route="dashboard">Dashboard</a>
+      <a href="#/log" data-route="log">Content Log</a>
+      <a href="#/ideas" data-route="ideas">Ideas Bank</a>
+      <a href="#/calendar" data-route="calendar">Calendar</a>
+      <a href="#/team" data-route="team">Team</a>
+    </nav>
+    <div class="masthead__meta">
+      <span class="masthead__date" id="masthead-date"></span>
+      <button class="btn btn--red" id="btn-new"><span class="btn__long">+ New Item</span><span class="btn__short">+ New</span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="view" class="view"></main>
+
+<footer class="footer">
+  <span>MAT ROOM CONTENT DESK</span>
+  <span id="footer-count"></span>
+  <span class="footer__actions">
+    <button class="linkbtn" id="btn-export">Export JSON</button>
+    <button class="linkbtn" id="btn-import">Import</button>
+    <button class="linkbtn" id="btn-reset">Reset demo data</button>
+  </span>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true">
+    <button class="modal__x" data-close aria-label="Close">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toasts"></div>
+<div class="milestone" id="milestone" hidden>
+  <div class="milestone__card">
+    <div class="milestone__kicker" id="milestone-kicker">MILESTONE</div>
+    <div class="milestone__num" id="milestone-num"></div>
+    <div class="milestone__title" id="milestone-title"></div>
+    <p class="milestone__body" id="milestone-body"></p>
+    <button class="btn btn--red" id="milestone-close">Keep it rolling</button>
+  </div>
+</div>
+
+<input type="file" id="file-input" accept="application/json" hidden />
+
+<script src="js/data.js"></script>
+<script src="js/streaks.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/view-dashboard.js"></script>
+<script src="js/view-log.js"></script>
+<script src="js/view-ideas.js"></script>
+<script src="js/view-calendar.js"></script>
+<script src="js/view-team.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
