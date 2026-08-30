@@ -35,6 +35,16 @@ Two footer buttons control that:
 - **Clear board** — wipes every item and idea, keeps the roster, and resets the
   streak counters.
 
+## Loading a board
+
+`boards/` holds ready-made boards as JSON. To load one: download the file, then
+**Import** in the footer and pick it. Import replaces the whole board — items,
+ideas and roster — so export first if the current one matters.
+
+- `boards/mat-room-sept-2026.json` — the Sept 2026 schedule: two weeks, three
+  posts a week (Mon motivational, Wed technique, Fri skit). Post dates are set,
+  film dates are deliberately blank until the room's filming days are decided.
+
 ## Pages
 
 | Page | What it does |
