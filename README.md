@@ -22,9 +22,18 @@ npx http-server . -p 8080
 It is a static site, so GitHub Pages serves it as-is — point Pages at the
 `main` branch, root folder, and it works with no configuration.
 
-First load seeds a realistic sample board (roster, ~22 content items, an ideas
-bank, and a streak history) generated relative to today's date. "Reset demo
-data" in the footer restores it at any time.
+**A fresh board starts empty.** The five-person roster is pre-filled, but there
+are no content items, no ideas, and every streak reads zero — the dashboard only
+ever reports work that actually happened.
+
+Two footer buttons control that:
+
+- **Load sample data** — fills the board with a realistic demo (roster, ~22 items
+  backdated across twelve weeks, an ideas bank, a live streak) generated relative
+  to today's date. Useful for seeing what a running team looks like. None of it
+  is real; clear it before you start tracking.
+- **Clear board** — wipes every item and idea, keeps the roster, and resets the
+  streak counters.
 
 ## Pages
 
@@ -49,7 +58,7 @@ A content item carries:
   change, editable afterwards)
 
 The roster is data, not code: people can be added, renamed, retired, or removed
-on the Team page. The owner (`settings.ownerId`, Hashim in the seed) is the sole
+on the Team page. The owner (`settings.ownerId`, Hashim by default) is the sole
 editor and cannot be removed.
 
 ## How the streaks work
@@ -105,7 +114,7 @@ Green and amber appear only as small state marks (completed / due soon).
 ├── index.html            page shell, nav, modal + overlay mounts
 ├── css/style.css         the whole design system
 └── js/
-    ├── data.js           state, persistence, seed data, date helpers
+    ├── data.js           state, persistence, empty + sample boards, date helpers
     ├── streaks.js        streak engine, leaderboard, badges, copy
     ├── fx.js             confetti, toasts, milestone overlay, flame marks
     ├── forms.js          modal, item/idea editors, status transitions

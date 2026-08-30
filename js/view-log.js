@@ -93,9 +93,15 @@ function renderLog(view) {
     count.textContent = rows.length + ' of ' + Store.items().length + ' items';
 
     if (!rows.length) {
+      const blank = !Store.items().length;
       list.appendChild(el('div', { class: 'empty' }, [
-        el('strong', { text: 'Nothing here' }),
-        el('span', { text: 'No item matches these filters. Clear them, or add a new item.' })
+        el('strong', { text: blank ? 'The log is empty' : 'Nothing here' }),
+        el('span', { text: blank
+          ? 'Add your first content item — give it a post date and the team streak starts counting.'
+          : 'No item matches these filters. Clear them, or add a new item.' }),
+        blank ? el('div', { style: 'margin-top:16px' }, [
+          el('button', { class: 'btn btn--red', text: '+ New Item', onclick: function () { openItemForm(null); } })
+        ]) : null
       ]));
       return;
     }

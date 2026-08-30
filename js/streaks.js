@@ -223,7 +223,7 @@ const StreakCopy = {
     if (r.current >= 2)  return { head: 'The run is real.', body: 'Two weeks clean. The third is where habits set.' };
     if (r.current === 1) return { head: 'Week one is on the board.', body: 'One clean week. Stack another on top of it.' };
     if (r.brokeThisWeek) return { head: 'Streak reset — no drama.', body: 'One post slipped. The counter starts at zero, the room does not. Next week is week one.' };
-    if (!r.hasData)      return { head: 'Nothing planned yet.', body: 'Add a post date to a content item and the counter starts moving.' };
+    if (!r.hasData)      return { head: 'No posts planned yet.', body: 'The counter starts the first week every planned post goes out on time. Add an item with a post date to get it moving.' };
     return { head: 'Fresh start.', body: 'Every streak on this board began at zero. Plan a post, hit the date, and it begins again.' };
   },
   milestone: function (n) {

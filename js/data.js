@@ -117,7 +117,7 @@ const Store = {
         }
       } catch (e) { /* fall through to seed */ }
     }
-    this.data = seedData();
+    this.data = emptyData();
     this.save();
     return this.data;
   },
@@ -236,7 +236,18 @@ const Store = {
     return item;
   },
 
-  reset: function () {
+  /* wipe the board back to an empty log, keeping the roster */
+  clear: function () {
+    const people = this.data.people;
+    const settings = this.data.settings;
+    this.data = emptyData();
+    this.data.people = people;
+    this.data.settings = settings;
+    this.save();
+  },
+
+  /* load the sample board on request — never on first run */
+  loadDemo: function () {
     this.data = seedData();
     this.save();
   }
@@ -289,19 +300,42 @@ function itemPeopleIds(item) {
 }
 
 /* ============================================================
-   SEED DATA — generated relative to today so the demo is alive
+   STARTING STATE
+   ------------------------------------------------------------
+   A fresh board is EMPTY. The roster is pre-filled because it is
+   known; every streak, count and date starts at zero so the
+   dashboard only ever reports work that really happened.
    ============================================================ */
-function seedData() {
-  const today = todayISO();
-  const thisWeek = weekStart(today);
-
-  const people = [
+function baseRoster() {
+  return [
     { id: 'p_adrian', name: 'Coach Adrian', role: 'coach', active: true },
     { id: 'p_naweed', name: 'Coach Naweed', role: 'coach', active: true },
     { id: 'p_hashim', name: 'Hashim', role: 'athlete', active: true },
     { id: 'p_ismael', name: 'Ismael', role: 'athlete', active: true },
     { id: 'p_massi', name: 'Massi', role: 'athlete', active: true }
   ];
+}
+
+function emptyData() {
+  return {
+    version: 1,
+    settings: { ownerId: 'p_hashim', teamName: 'Mat Room' },
+    people: baseRoster(),
+    items: [],
+    ideas: [],
+    meta: { bestTeam: 0, bestPersonal: {}, celebratedMilestones: [], lastCelebrated: 0 }
+  };
+}
+
+/* ============================================================
+   SAMPLE DATA — only ever loaded on request, from the footer.
+   Generated relative to today so the demo board looks alive.
+   ============================================================ */
+function seedData() {
+  const today = todayISO();
+  const thisWeek = weekStart(today);
+
+  const people = baseRoster();
   const OWNER = 'p_hashim';
 
   /* day n of the week that started `weeksAgo` weeks ago (0 = Monday) */

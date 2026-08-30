@@ -111,11 +111,27 @@ function importJSON(file) {
     if (fileInput.files && fileInput.files[0]) importJSON(fileInput.files[0]);
     fileInput.value = '';
   });
-  document.getElementById('btn-reset').addEventListener('click', function () {
-    if (confirm('Reset everything back to the sample data? Your current items will be lost.')) {
-      Store.reset();
+  document.getElementById('btn-demo').addEventListener('click', function () {
+    const populated = Store.items().length || Store.ideas().length;
+    const warning = populated
+      ? 'Replace the current board with the sample data? Your items and ideas will be lost.'
+      : 'Load a sample board to explore the app? Everything on it is made up — clear it before you start tracking for real.';
+    if (confirm(warning)) {
+      Store.loadDemo();
       App.render();
-      FX.toast('Reset', 'Sample data restored.', 'soft');
+      FX.toast('Sample data loaded', 'None of this is real work — clear the board when you are done looking.', 'soft');
+    }
+  });
+
+  document.getElementById('btn-clear').addEventListener('click', function () {
+    if (!Store.items().length && !Store.ideas().length) {
+      FX.toast('Already empty', 'Nothing on the board to clear.', 'soft');
+      return;
+    }
+    if (confirm('Clear every content item and idea? The roster stays. This cannot be undone.')) {
+      Store.clear();
+      App.render();
+      FX.toast('Board cleared', 'Streaks start from your next planned post.', 'soft');
     }
   });
 
