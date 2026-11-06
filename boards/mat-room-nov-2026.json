@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "settings": {
+    "ownerId": "p_hashim",
+    "teamName": "Mat Room"
+  },
+  "people": [
+    {
+      "id": "p_adrian",
+      "name": "Coach Adrian",
+      "role": "coach",
+      "active": true
+    },
+    {
+      "id": "p_naweed",
+      "name": "Coach Naweed",
+      "role": "coach",
+      "active": true
+    },
+    {
+      "id": "p_hashim",
+      "name": "Hashim",
+      "role": "athlete",
+      "active": true
+    },
+    {
+      "id": "p_ismael",
+      "name": "Ismael",
+      "role": "athlete",
+      "active": true
+    },
+    {
+      "id": "p_massi",
+      "name": "Massi",
+      "role": "athlete",
+      "active": true
+    }
+  ],
+  "items": [
+    {
+      "id": "c_practice_live",
+      "title": "Practice Room Live Goes",
+      "hook": "They call this practice.",
+      "script": "Format: practice b-roll, live goes.\n\nShot and captioned — 6s, 9:16, caption burned in the house style.\n\nAlt hooks:\n2. “This is a Tuesday.”\n3. “Nobody posts this part.”",
+      "status": "edited",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "2026-11-06",
+      "postDate": "2026-11-09",
+      "filmedAt": "2026-11-06",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w1_wed",
+      "title": "The Suplex That Punishes a Bad Sprawl",
+      "hook": "He tried to sprawl. He ended up in the air instead.",
+      "script": "Format: technique breakdown — front body lift suplex.\n\nAlt hooks:\n2. “This is what happens when you sprawl wrong.”\n3. “Everyone defends the takedown, nobody defends this.”",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-11",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w1_fri",
+      "title": "Types of Training Partners",
+      "hook": "POV: your partner 'goes easy' on you.",
+      "script": "Format: funny skit.\n\nAlt hooks:\n2. “Every wrestling room has this one guy.”\n3. “Nobody warns you about drill partner number 3.”",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-13",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w1_mon",
+      "title": "Why You Train When No One's Watching",
+      "hook": "Nobody claps for the empty gym at 5am.",
+      "script": "Format: motivational b-roll.\n\nAlt hooks:\n2. “This is the part they don't put on the highlight reel.”\n3. “You don't rise to the match, you fall to your training.”",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-16",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w2_wed",
+      "title": "Technique Breakdown — move not picked yet",
+      "hook": "",
+      "script": "Format: technique breakdown.\n\nMove still TBD. Pick the move and the title and three hooks get written to match. Slot is held so the week stays on the calendar.",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-18",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w2_fri",
+      "title": "Cutting Weight Be Like",
+      "hook": "The last 2 pounds live in your head rent free.",
+      "script": "Format: funny skit.\n\nAlt hooks:\n2. “This is what desperation tastes like — nothing, actually.”\n3. “Day 3 of no carbs and I'm arguing with the scale.”",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-20",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "c_w2_mon",
+      "title": "The Score Doesn't Know How Tired You Are",
+      "hook": "Your legs give out before your will does. That's the point.",
+      "script": "Format: motivational b-roll.\n\nAlt hooks:\n2. “Third period doesn't care about your excuses.”\n3. “This is the round that separates everyone.”",
+      "status": "idea",
+      "filmerId": null,
+      "performerIds": [],
+      "editorId": "p_hashim",
+      "filmDate": "",
+      "postDate": "2026-11-23",
+      "filmedAt": "",
+      "postedAt": "",
+      "createdAt": "2026-11-06"
+    }
+  ],
+  "ideas": [],
+  "meta": {
+    "bestTeam": 0,
+    "bestPersonal": {},
+    "celebratedMilestones": [],
+    "lastCelebrated": 0
+  }
+}
