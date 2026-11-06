@@ -103,11 +103,25 @@ belongs in the post copy, not burned on the frame.
 ```
 
 **Burning onto footage or a still** — `scripts/burn-caption.sh` applies the
-whole spec with ffmpeg and fetches the font on first run:
+whole spec, including the tracking, and fetches the font on first run:
 
 ```bash
 scripts/burn-caption.sh input.mp4 "Men go outside." output.mp4
+scripts/burn-caption.sh frame.jpg 'Two lines\nwork too.' out.jpg 0.62
 ```
+
+A fourth argument moves the line off centre (0.5 is the default and the
+reference position); `\n` breaks a line. Size and shadow scale with the input,
+so the same command suits a 1080p still and a 4K vertical clip, and the output
+keeps the input's resolution and audio untouched.
+
+It renders the caption in headless Chrome as a transparent PNG and composites
+that, rather than using ffmpeg's `drawtext`, because `drawtext` cannot
+letter-space and the tracking is the heart of this look. Any Chrome or Chromium
+works and the script finds it on PATH or at the usual macOS locations; point
+`CHROME` at a binary to override. Without a browser it still runs via
+`drawtext` and says clearly that the result is roughly 15-20% wide and off
+spec — usable for a rough cut, not for anything posted.
 
 **In an editor (CapCut, Premiere, Resolve)** — Lora, Bold, white,
 no stroke, no background, tracking roughly −60 (CapCut) or −60/1000 (Premiere),
